@@ -1,6 +1,8 @@
+import dayjs from 'dayjs'
 import inquirer from 'inquirer'
 import { easyCreate } from './easyCreate'
 import { makePackage } from './makePackage'
+import chalk from 'chalk'
 
 const questions = [
   {
@@ -14,10 +16,14 @@ const questions = [
 async function allocatingExecutionFlow() {
   const { type } = await inquirer.prompt(questions)
   if (type === 'EasyCreate') {
-    easyCreate()
+    await easyCreate()
   } else {
-    makePackage()
+    await makePackage()
   }
+  var now = dayjs().format('YYYY-MM-DD HH:mm:ss')
+  console.log(
+    chalk.blue(`Now ${now}. Time flies and the years fly by. Come on Junior !`)
+  )
 }
 
 allocatingExecutionFlow()

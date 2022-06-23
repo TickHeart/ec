@@ -1,7 +1,7 @@
 {
   "name": "@2116709082q/create-ec",
   "type": "module",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "private": false,
   "packageManager": "pnpm@7.3.0",
   "description": "",
@@ -82,6 +82,7 @@
   },
   "dependencies": {
     "chalk": "^5.0.1",
+    "dayjs": "^1.11.3",
     "inquirer": "^9.0.0"
   }
 }
