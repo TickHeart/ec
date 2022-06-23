@@ -3,6 +3,7 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import { writeFile, readFile } from 'fs/promises'
 import chalk from 'chalk'
+import { TEMPLATE, TemplateName } from './template'
 
 const log = console.log
 
@@ -36,11 +37,15 @@ export async function easyCreate() {
   )
 }
 
-async function writeFilesThroughTemplates(filename: string) {
+async function writeFilesThroughTemplates(filename: string): Promise<void> {
   const cwd = process.cwd()
   const templateUrl = path.resolve(__dirname, '..', 'templates/', filename)
   const fileBody = await readFile(templateUrl, { encoding: 'utf8' })
-  await writeFile(cwd + '/.' + filename, fileBody, { flag: 'w' })
+
+  const { toFileName } = TEMPLATE[filename as TemplateName]
+  const toFileUrl = path.resolve(cwd, toFileName)
+
+  await writeFile(toFileUrl, fileBody, { flag: 'w' })
 
   log(chalk.bgGreen(`.${filename} created successfully`))
 }
