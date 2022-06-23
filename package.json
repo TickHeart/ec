@@ -6,9 +6,9 @@
   "packageManager": "pnpm@7.3.0",
   "description": "",
   "keywords": [],
-  "homepage": "https://github.com/TickHeart/tick-cli#readme",
+  "homepage": "https://github.com/TickHeart/ec#readme",
   "bugs": {
-    "url": "https://github.com/zxTick/ztecharts/issues"
+    "url": "https://github.com/TickHeart/ec/issues"
   },
   "bin": {
     "create-ec": "./dist/index.js"
@@ -17,7 +17,7 @@
   "author": "tick",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TickHeart/tick-cli"
+    "url": "git+https://github.com/TickHeart/ec"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
