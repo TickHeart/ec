@@ -9,7 +9,7 @@ const log = console.log
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-const templateNames = ['.gitignore', '.prettierrc.yml', 'all']
+const templateNames = ['gitignore', 'prettierrc.yml', 'all']
 
 const questions = [
   {
@@ -40,7 +40,7 @@ async function writeFilesThroughTemplates(filename: string) {
   const cwd = process.cwd()
   const templateUrl = path.resolve(__dirname, '..', 'templates/', filename)
   const fileBody = await readFile(templateUrl, { encoding: 'utf8' })
-  await writeFile(cwd + '/' + filename, fileBody, { flag: 'w' })
+  await writeFile(cwd + '/.' + filename, fileBody, { flag: 'w' })
 
-  log(chalk.bgGreen(`${filename} created successfully`))
+  log(chalk.bgGreen(`.${filename} created successfully`))
 }

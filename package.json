@@ -1,23 +1,25 @@
 {
   "name": "@2116709082q/create-ec",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.11",
   "private": false,
   "packageManager": "pnpm@7.3.0",
   "description": "",
   "keywords": [],
-  "homepage": "https://ci.com/TickHeart/tick-cli#readme",
+  "homepage": "https://github.com/TickHeart/tick-cli#readme",
   "bugs": {
     "url": "https://github.com/zxTick/ztecharts/issues"
   },
-  "bin": "./dist/index.mjs",
+  "bin": {
+    "create-ec": "./dist/index.js"
+  },
   "license": "MIT",
   "author": "tick",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TickHeart/tick-cli"
   },
-  "main": "./dist/index.js",
+  "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
