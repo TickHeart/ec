@@ -28,7 +28,7 @@ export async function makePackage() {
   const body = await changeBodyToString(packageJsonBody, inquirerData)
 
   await writeFile(packageJsonUrl, body)
-  console.log(chalk.bgGreen('Write success'))
+  console.log(chalk.bgGreen('Write success') + '\n')
 }
 
 async function readPackageJson() {
@@ -55,7 +55,8 @@ async function changeBodyToString(packageJsonBody: any, inquirerData: any) {
     parser: 'json'
   })
   console.log(
-    chalk.green('The configuration has been modified and is being written...')
+    chalk.green('The configuration has been modified and is being written...') +
+      '\n'
   )
   return res
 }

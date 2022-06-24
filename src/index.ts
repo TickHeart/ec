@@ -22,7 +22,9 @@ async function allocatingExecutionFlow() {
   }
   var now = dayjs().format('YYYY-MM-DD HH:mm:ss')
   console.log(
-    chalk.blue(`Now ${now}. Time flies and the years fly by. Come on Junior !`)
+    chalk.blue(
+      `Now ${now}. Time flies and the years fly by. Come on Junior !`
+    ) + '\n'
   )
 }
 

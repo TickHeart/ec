@@ -33,7 +33,7 @@ export async function easyCreate() {
   log(
     chalk.green(
       'Thank you very much for using this easy create. i am really happy. Good luck with your work!'
-    )
+    ) + '\n'
   )
 }
 
@@ -47,5 +47,5 @@ async function writeFilesThroughTemplates(filename: string): Promise<void> {
 
   await writeFile(toFileUrl, fileBody, { flag: 'w' })
 
-  log(chalk.bgGreen(`.${filename} created successfully`))
+  log(chalk.bgGreen(`.${filename} created successfully` + '\n'))
 }
