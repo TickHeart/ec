@@ -6,6 +6,7 @@ specifiers:
   '@developer-plus/eslint-config': ^0.1.1
   '@types/inquirer': ^8.2.1
   '@types/node': ^18.0.0
+  '@types/prettier': ^2.6.3
   bumpp: ^8.2.1
   chalk: ^5.0.1
   dayjs: ^1.11.3
@@ -15,6 +16,7 @@ specifiers:
   inquirer: ^9.0.0
   lint-staged: ^13.0.2
   pnpm: ^7.3.0
+  prettier: ^2.7.1
   tsup: ^6.1.2
   typescript: ^4.7.4
   unplugin-auto-import: ^0.8.8
@@ -24,6 +26,7 @@ dependencies:
   chalk: 5.0.1
   dayjs: 1.11.3
   inquirer: 9.0.0
+  prettier: 2.7.1
 
 devDependencies:
   '@commitlint/cli': 17.0.2
@@ -31,6 +34,7 @@ devDependencies:
   '@developer-plus/eslint-config': 0.1.1_b5e7v2qnwxfo6hmiq56u52mz3e
   '@types/inquirer': 8.2.1
   '@types/node': 18.0.0
+  '@types/prettier': 2.6.3
   bumpp: 8.2.1
   eslint: 8.18.0
   esno: 0.16.3
@@ -506,6 +510,10 @@ packages:
 
   /@types/parse-json/4.0.0:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
+    dev: true
+
+  /@types/prettier/2.6.3:
+    resolution: {integrity: sha512-ymZk3LEC/fsut+/Q5qejp6R9O1rMxz3XaRHDV6kX8MrGAhOSPqVARbDi+EZvInBpw+BnCX3TD240byVkOfQsHg==}
     dev: true
 
   /@types/through/0.0.30:
@@ -3355,6 +3363,12 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
     dev: true
+
+  /prettier/2.7.1:
+    resolution: {integrity: sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
+    dev: false
 
   /prompts/2.4.2:
     resolution: {integrity: sha512-NxNv/kLguCA7p3jE8oL2aEBsrJWgAakBpgmgK6lpPWV+WuOmY6r2/zbAVnP+T8bQlA0nzHXSJSJW0Hq7ylaD2Q==}
