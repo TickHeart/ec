@@ -1,7 +1,7 @@
 {
   "name": "@2116709082q/create-ec",
   "type": "module",
-  "version": "0.1.6",
+  "version": "0.1.11",
   "private": false,
   "packageManager": "pnpm@7.3.0",
   "description": "",
@@ -60,6 +60,7 @@
     "@types/inquirer": "^8.2.1",
     "@types/node": "^18.0.0",
     "@types/prettier": "^2.6.3",
+    "@types/shelljs": "^0.8.11",
     "bumpp": "^8.2.1",
     "eslint": "^8.18.0",
     "esno": "^0.16.3",
@@ -85,6 +86,7 @@
     "chalk": "^5.0.1",
     "dayjs": "^1.11.3",
     "inquirer": "^9.0.0",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "shelljs": "^0.8.5"
   }
 }

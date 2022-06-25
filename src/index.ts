@@ -3,13 +3,14 @@ import inquirer from 'inquirer'
 import { easyCreate } from './easyCreate'
 import { makePackage } from './makePackage'
 import chalk from 'chalk'
+import { antfuEslint } from './antfuEslint'
 
 const questions = [
   {
     type: 'list',
     name: 'type',
     message: 'Please select the generated file',
-    choices: ['EasyCreate', 'MakePackage']
+    choices: ['EasyCreate', 'MakePackage', 'AntfuEslint']
   }
 ]
 
@@ -17,8 +18,10 @@ async function allocatingExecutionFlow() {
   const { type } = await inquirer.prompt(questions)
   if (type === 'EasyCreate') {
     await easyCreate()
-  } else {
+  } else if(type === 'MakePackage') {
     await makePackage()
+  } else if(type === 'AntfuEslint') {
+    await antfuEslint()
   }
   var now = dayjs().format('YYYY-MM-DD HH:mm:ss')
   console.log(

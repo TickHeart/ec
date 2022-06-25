@@ -5,6 +5,9 @@ export const TEMPLATE = {
   "prettierrc.yml": {
     toFileName: ".prettierrc.yml",
   },
+  'antfu-eslint': {
+    toFileName: '.eslintrc'
+  }
 };
 
 export type TemplateName = keyof typeof TEMPLATE;
