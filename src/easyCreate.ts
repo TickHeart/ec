@@ -1,10 +1,12 @@
-import inquirer from 'inquirer'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import { writeFile, readFile } from 'fs/promises'
+import { readFile, writeFile } from 'fs/promises'
+import inquirer from 'inquirer'
 import chalk from 'chalk'
-import { TEMPLATE, TemplateName } from './template'
+import type { TemplateName } from './template'
+import { TEMPLATE } from './template'
 
+// eslint-disable-next-line no-console
 const log = console.log
 
 const __filename = fileURLToPath(import.meta.url)
@@ -17,23 +19,25 @@ const questions = [
     type: 'list',
     name: 'filename',
     message: 'Please select the generated file',
-    choices: templateNames
-  }
+    choices: templateNames,
+  },
 ]
 export async function easyCreate() {
   const { filename } = await inquirer.prompt(questions)
   if (filename !== 'all') {
     await writeFilesThroughTemplates(filename)
-  } else {
+  }
+  else {
     for (const file of templateNames) {
-      if (file === 'all') continue
+      if (file === 'all')
+        continue
       await writeFilesThroughTemplates(file)
     }
   }
   log(
-    chalk.green(
-      'Thank you very much for using this easy create. i am really happy. Good luck with your work!'
-    ) + '\n'
+    `${chalk.green(
+      'Thank you very much for using this easy create. i am really happy. Good luck with your work!',
+    )}\n`,
   )
 }
 

@@ -1,24 +1,20 @@
-import inquirer from 'inquirer'
 import { readFile, writeFile } from 'fs/promises'
 import path from 'path'
+import inquirer from 'inquirer'
 import chalk from 'chalk'
 import prettier from 'prettier'
-import { fileURLToPath } from 'url'
-
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
 
 const questions = [
   {
     type: 'input',
     name: 'author',
-    message: '🐯What is the name of the author：'
+    message: '🐯What is the name of the author：',
   },
   {
     type: 'input',
     name: 'repositoryUrl',
-    message: '🏠What is the address of your repository：'
-  }
+    message: '🏠What is the address of your repository：',
+  },
 ]
 
 export async function makePackage() {
@@ -28,14 +24,15 @@ export async function makePackage() {
   const body = await changeBodyToString(packageJsonBody, inquirerData)
 
   await writeFile(packageJsonUrl, body)
-  console.log(chalk.bgGreen('Write success') + '\n')
+  // eslint-disable-next-line no-console
+  console.log(`${chalk.bgGreen('Write success')}\n`)
 }
 
 async function readPackageJson() {
   const cwd = process.cwd()
   const packageJsonUrl = path.resolve(cwd, 'package.json')
   const res = await readFile(packageJsonUrl, {
-    encoding: 'utf8'
+    encoding: 'utf8',
   })
   return [JSON.parse(res), packageJsonUrl]
 }
@@ -47,16 +44,17 @@ async function changeBodyToString(packageJsonBody: any, inquirerData: any) {
   packageJsonBody.name = projectName
   packageJsonBody.author = author
   packageJsonBody.license = 'MIT'
-  packageJsonBody.homepage = repositoryUrl + '#readme'
-  packageJsonBody.bugs = { url: repositoryUrl + '/issues' }
-  packageJsonBody.repository = { type: 'git', url: 'git+' + repositoryUrl }
+  packageJsonBody.homepage = `${repositoryUrl}#readme`
+  packageJsonBody.bugs = { url: `${repositoryUrl}/issues` }
+  packageJsonBody.repository = { type: 'git', url: `git+${repositoryUrl}` }
 
   const res = prettier.format(JSON.stringify(packageJsonBody), {
-    parser: 'json'
+    parser: 'json',
   })
+  // eslint-disable-next-line no-console
   console.log(
-    chalk.green('The configuration has been modified and is being written...') +
-      '\n'
+    `${chalk.green('The configuration has been modified and is being written...')
+      }\n`,
   )
   return res
 }

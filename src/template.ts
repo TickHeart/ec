@@ -1,13 +1,13 @@
 export const TEMPLATE = {
-  gitignore: {
-    toFileName: ".gitignore",
+  'gitignore': {
+    toFileName: '.gitignore',
   },
-  "prettierrc.yml": {
-    toFileName: ".prettierrc.yml",
+  'prettierrc.yml': {
+    toFileName: '.prettierrc.yml',
   },
   'antfu-eslint': {
-    toFileName: '.eslintrc'
-  }
-};
+    toFileName: '.eslintrc',
+  },
+}
 
-export type TemplateName = keyof typeof TEMPLATE;
+export type TemplateName = keyof typeof TEMPLATE
