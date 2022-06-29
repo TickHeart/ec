@@ -1,7 +1,7 @@
 {
   "name": "ec",
   "type": "module",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "private": false,
   "packageManager": "pnpm@7.3.0",
   "description": "",
