@@ -14,16 +14,19 @@ const questions = [
   },
 ]
 
+const behavior = {
+  EasyCreate: easyCreate,
+  MakePackage: makePackage,
+  AntfuEslint: antfuEslint,
+}
+
+type BehaviorKey = keyof typeof behavior
+
 async function allocatingExecutionFlow() {
   const { type } = await inquirer.prompt(questions)
-  if (type === 'EasyCreate')
-    await easyCreate()
 
-  else if (type === 'MakePackage')
-    await makePackage()
-
-  else if (type === 'AntfuEslint')
-    await antfuEslint()
+  const executionBehavior = behavior[type as BehaviorKey]
+  await executionBehavior()
 
   const now = dayjs().format('YYYY-MM-DD HH:mm:ss')
 
