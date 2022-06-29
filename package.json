@@ -1,14 +1,14 @@
 {
-  "name": "@2116709082q/create-ec",
+  "name": "ec",
   "type": "module",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "private": false,
   "packageManager": "pnpm@7.3.0",
   "description": "",
   "keywords": [],
-  "homepage": "https://github.com/TickHeart/ec#readme",
+  "homepage": " https://github.com/TickHeart/ec#readme",
   "bugs": {
-    "url": "https://github.com/TickHeart/ec/issues"
+    "url": " https://github.com/TickHeart/ec/issues"
   },
   "bin": {
     "create-ec": "./dist/index.js"
@@ -17,7 +17,7 @@
   "author": "tick",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TickHeart/ec"
+    "url": "git+ https://github.com/TickHeart/ec"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
