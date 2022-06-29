@@ -4,6 +4,8 @@ import inquirer from 'inquirer'
 import chalk from 'chalk'
 import prettier from 'prettier'
 
+type Keys<T> = keyof T
+
 const questions = [
   {
     type: 'input',
@@ -21,7 +23,7 @@ export async function makePackage() {
   const inquirerData = await inquirer.prompt(questions)
 
   const [packageJsonBody, packageJsonUrl] = await readPackageJson()
-  const body = await changeBodyToString(packageJsonBody, inquirerData)
+  const body = await injectBodyToString(packageJsonBody, inquirerData)
 
   await writeFile(packageJsonUrl, body)
   // eslint-disable-next-line no-console
@@ -36,21 +38,28 @@ async function readPackageJson() {
   })
   return [JSON.parse(res), packageJsonUrl]
 }
-async function changeBodyToString(packageJsonBody: any, inquirerData: any) {
+async function injectBodyToString(packageJsonBody: any, inquirerData: any) {
   const { author, repositoryUrl } = inquirerData
-
   const projectName = (repositoryUrl as string).split('/').at(-1)
 
-  packageJsonBody.name = projectName
-  packageJsonBody.author = author
-  packageJsonBody.license = 'MIT'
-  packageJsonBody.homepage = `${repositoryUrl}#readme`
-  packageJsonBody.bugs = { url: `${repositoryUrl}/issues` }
-  packageJsonBody.repository = { type: 'git', url: `git+${repositoryUrl}` }
+  const info = {
+    name: projectName,
+    author,
+    license: 'MIT',
+    homepage: `${repositoryUrl}#readme`,
+    bugs: { url: `${repositoryUrl}/issues` },
+    repository: { type: 'git', url: `git+${repositoryUrl}` },
+  }
+
+  for (const key in info) {
+    const val = info[key as Keys<typeof info>]
+    packageJsonBody[key] = val
+  }
 
   const res = prettier.format(JSON.stringify(packageJsonBody), {
     parser: 'json',
   })
+
   // eslint-disable-next-line no-console
   console.log(
     `${chalk.green('The configuration has been modified and is being written...')
