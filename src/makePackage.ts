@@ -40,7 +40,8 @@ async function readPackageJson() {
 }
 async function injectBodyToString(packageJsonBody: any, inquirerData: any) {
   const { author, repositoryUrl } = inquirerData
-  const projectName = (repositoryUrl as string).split('/').at(-1)
+  const projectList = (repositoryUrl as string).split('/')
+  const projectName = projectList[projectList.length - 1]
 
   const info = {
     name: projectName,
