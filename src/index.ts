@@ -4,13 +4,14 @@ import chalk from 'chalk'
 import { easyCreate } from './easyCreate'
 import { makePackage } from './makePackage'
 import { antfuEslint } from './antfuEslint'
+import { degitTs } from './degitTs'
 
 const questions = [
   {
     type: 'list',
     name: 'type',
     message: 'Please select the generated file',
-    choices: ['EasyCreate', 'MakePackage', 'AntfuEslint'],
+    choices: ['EasyCreate', 'MakePackage', 'AntfuEslint', 'DegitTs'],
   },
 ]
 
@@ -18,6 +19,7 @@ const behavior = {
   EasyCreate: easyCreate,
   MakePackage: makePackage,
   AntfuEslint: antfuEslint,
+  DegitTs: degitTs,
 }
 
 type BehaviorKey = keyof typeof behavior
