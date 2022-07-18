@@ -1,7 +1,7 @@
 {
   "name": "@tickh/create-ec",
   "type": "module",
-  "version": "0.1.26",
+  "version": "0.1.27",
   "private": false,
   "packageManager": "pnpm@7.3.0",
   "description": "",
