@@ -1,7 +1,7 @@
 {
   "name": "@tickh/create-ec",
   "type": "module",
-  "version": "0.1.44",
+  "version": "0.1.45",
   "private": false,
   "packageManager": "pnpm@7.3.0",
   "description": "",
@@ -94,6 +94,7 @@
     "jsonfile": "^6.1.0",
     "prettier": "^2.7.1",
     "shelljs": "^0.8.5",
+    "strip-json-comments": "^4.0.0",
     "ztshared": "^0.0.12"
   }
 }
