@@ -6,9 +6,9 @@ const log = console.log
 
 export async function degitTs() {
   const cwd = process.cwd()
-  const shell = 'degit TickHeart/starter-ts'
+  const shellForce = 'degit TickHeart/starter-ts --force'
   try {
-    await execaCommand(shell, { stdio: 'inherit', encoding: 'utf-8', cwd })
+    await execaCommand(shellForce, { stdio: 'inherit', encoding: 'utf-8', cwd })
   }
   catch {
     log(

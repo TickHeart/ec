@@ -6,6 +6,7 @@ specifiers:
   '@commitlint/config-conventional': ^17.0.2
   '@developer-plus/eslint-config': ^0.1.1
   '@types/inquirer': ^8.2.1
+  '@types/jsonfile': ^6.1.0
   '@types/node': ^18.0.0
   '@types/prettier': ^2.6.3
   '@types/shelljs': ^0.8.11
@@ -17,22 +18,28 @@ specifiers:
   execa: ^6.1.0
   husky: ^8.0.1
   inquirer: ^9.0.0
+  jsonfile: ^6.1.0
   lint-staged: ^13.0.2
   pnpm: ^7.3.0
   prettier: ^2.7.1
   shelljs: ^0.8.5
+  strip-json-comments: ^4.0.0
   tsup: ^6.1.2
   typescript: ^4.7.4
   unplugin-auto-import: ^0.8.8
   vitest: ^0.15.2
+  ztshared: ^0.0.12
 
 dependencies:
   chalk: 5.0.1
   dayjs: 1.11.3
   execa: 6.1.0
   inquirer: 9.0.0
+  jsonfile: 6.1.0
   prettier: 2.7.1
   shelljs: 0.8.5
+  strip-json-comments: 4.0.0
+  ztshared: 0.0.12
 
 devDependencies:
   '@antfu/eslint-config': 0.25.2_b5e7v2qnwxfo6hmiq56u52mz3e
@@ -40,6 +47,7 @@ devDependencies:
   '@commitlint/config-conventional': 17.0.2
   '@developer-plus/eslint-config': 0.1.1_b5e7v2qnwxfo6hmiq56u52mz3e
   '@types/inquirer': 8.2.1
+  '@types/jsonfile': 6.1.0
   '@types/node': 18.0.0
   '@types/prettier': 2.6.3
   '@types/shelljs': 0.8.11
@@ -604,6 +612,12 @@ packages:
 
   /@types/json5/0.0.29:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
+    dev: true
+
+  /@types/jsonfile/6.1.0:
+    resolution: {integrity: sha512-zQPywzif9EycCkvECjYT9dbbttT0dkk657zcLb/803ZOXHsBA963jzEPF/Jnh1zOdBbgFJvUE8kcvZverAoK1w==}
+    dependencies:
+      '@types/node': 18.0.0
     dev: true
 
   /@types/mdast/3.0.10:
@@ -2440,7 +2454,6 @@ packages:
 
   /graceful-fs/4.2.10:
     resolution: {integrity: sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==}
-    dev: true
 
   /hard-rejection/2.1.0:
     resolution: {integrity: sha512-VIZB+ibDhx7ObhAe7OVtoEbuP4h/MuOTHJ+J8h/eBXotJYl0fBgR72xDFCKgIh22OJZIOVNxBMWuhAr10r8HdA==}
@@ -2837,7 +2850,6 @@ packages:
       universalify: 2.0.0
     optionalDependencies:
       graceful-fs: 4.2.10
-    dev: true
 
   /jsonparse/1.3.1:
     resolution: {integrity: sha512-POQXvpdL69+CluYsillJ7SUhKvytYjW9vG/GKpnf+xP8UWgYEM/RaMzHHofbALDiKbbP1W8UEYmgGl39WkPZsg==}
@@ -3974,6 +3986,11 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /strip-json-comments/4.0.0:
+    resolution: {integrity: sha512-LzWcbfMbAsEDTRmhjWIioe8GcDRl0fa35YMXFoJKDdiD/quGFmjJjdgPjFJJNwCMaLyQqFIDqCdHD2V4HfLgYA==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dev: false
+
   /strip-literal/0.4.0:
     resolution: {integrity: sha512-ql/sBDoJOybTKSIOWrrh8kgUEMjXMwRAkZTD0EwiwxQH/6tTPkZvMIEjp0CRlpi6V5FMiJyvxeRkEi1KrGISoA==}
     dependencies:
@@ -4276,7 +4293,6 @@ packages:
   /universalify/2.0.0:
     resolution: {integrity: sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==}
     engines: {node: '>= 10.0.0'}
-    dev: true
 
   /unplugin-auto-import/0.8.8:
     resolution: {integrity: sha512-cVZ79zMR1v4VCZ9emFTUnltmazCc2B4hObyVrxJdlgJ2sK8qub6JfjFt38rCF6MVEddkHiWCU6wZR1qbdqe+ig==}
@@ -4595,3 +4611,7 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  /ztshared/0.0.12:
+    resolution: {integrity: sha512-BlL2X4E85MOW++Hj86IYt2Yk5J1IT6tKehN5FnYDWk+pxDD0EtVTX6HE1ItXTgMWXGaEcrqO3ROddDu1WohSRg==}
+    dev: false

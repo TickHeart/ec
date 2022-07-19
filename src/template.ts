@@ -8,6 +8,9 @@ export const TEMPLATE = {
   'antfu-eslint': {
     toFileName: '.eslintrc',
   },
+  'vitest': {
+    toFileName: 'vitest.config.ts',
+  },
 }
 
 export type TemplateName = keyof typeof TEMPLATE
