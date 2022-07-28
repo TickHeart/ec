@@ -5,11 +5,11 @@ import inquirer from 'inquirer'
 // eslint-disable-next-line no-console
 const log = console.log
 
-export async function degitTs() {
+export async function degitReact() {
   const cwd = process.cwd()
   const fileName = cwd.split('/').pop()
-  const shellForce = 'degit TickHeart/starter-ts --force'
-  const shell = 'degit TickHeart/starter-ts'
+  const shellForce = 'degit lixudong96/starter-react -ts --force'
+  const shell = 'degit lixudong96/starter-react'
   try {
     const { type } = await inquirer.prompt([
       {

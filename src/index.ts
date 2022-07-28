@@ -1,7 +1,7 @@
 import dayjs from 'dayjs'
 import inquirer from 'inquirer'
 import chalk from 'chalk'
-
+import { degitReact } from './degitReact'
 import { easyCreate } from './easyCreate'
 import { makePackage } from './makePackage'
 import { antfuEslint } from './antfuEslint'
@@ -13,7 +13,7 @@ const questions = [
     type: 'list',
     name: 'type',
     message: 'Please select the generated file',
-    choices: ['EasyCreate', 'MakePackage', 'AntfuEslint', 'DegitTs', 'Vitest'],
+    choices: ['EasyCreate', 'MakePackage', 'AntfuEslint', 'DegitTs', 'DegitReact`'],
   },
 ]
 
@@ -23,6 +23,7 @@ const behavior = {
   AntfuEslint: antfuEslint,
   DegitTs: degitTs,
   Vitest: vitestEc,
+  DegitReact: degitReact,
 }
 
 type BehaviorKey = keyof typeof behavior
