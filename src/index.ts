@@ -7,13 +7,14 @@ import { makePackage } from './makePackage'
 import { antfuEslint } from './antfuEslint'
 import { vitestEc } from './vitestEc'
 import { degitTs } from './degitTs'
+import { degitVue3 } from './degitVue3'
 
 const questions = [
   {
     type: 'list',
     name: 'type',
     message: 'Please select the generated file',
-    choices: ['EasyCreate', 'MakePackage', 'AntfuEslint', 'DegitTs', 'DegitReact`'],
+    choices: ['EasyCreate', 'MakePackage', 'AntfuEslint', 'DegitTs', 'DegitReact', 'DegitVue3'],
   },
 ]
 
@@ -24,6 +25,7 @@ const behavior = {
   DegitTs: degitTs,
   Vitest: vitestEc,
   DegitReact: degitReact,
+  DegitVue3: degitVue3,
 }
 
 type BehaviorKey = keyof typeof behavior
