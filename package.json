@@ -5,30 +5,28 @@
   "private": false,
   "packageManager": "pnpm@7.3.0",
   "description": "",
-  "keywords": [],
-  "homepage": " https://github.com/TickHeart/ec#readme",
-  "bugs": {
-    "url": " https://github.com/TickHeart/ec/issues"
-  },
-  "bin": {
-    "create-ec": "./dist/index.js"
-  },
-  "license": "MIT",
   "author": "tick",
+  "license": "MIT",
+  "homepage": " https://github.com/TickHeart/ec#readme",
   "repository": {
     "type": "git",
     "url": "git+ https://github.com/TickHeart/ec"
   },
+  "bugs": {
+    "url": " https://github.com/TickHeart/ec/issues"
+  },
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    }
+  },
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    }
-  },
   "typesVersions": {
     "*": {
       "*": [
@@ -37,11 +35,13 @@
       ]
     }
   },
+  "bin": {
+    "create-ec": "./dist/index.js"
+  },
   "files": [
     "dist",
     "templates"
   ],
-  "sideEffects": false,
   "scripts": {
     "build": "tsup",
     "lint": "eslint .",
@@ -52,6 +52,18 @@
     "test": "vitest",
     "typecheck": "tsc --noEmit",
     "prepare": "husky install"
+  },
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "dayjs": "^1.11.3",
+    "execa": "^6.1.0",
+    "inquirer": "^9.0.0",
+    "jsonfile": "^6.1.0",
+    "ora": "^6.1.2",
+    "prettier": "^2.7.1",
+    "shelljs": "^0.8.5",
+    "strip-json-comments": "^4.0.0",
+    "ztshared": "^0.0.12"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.25.2",
@@ -83,17 +95,5 @@
     "extends": [
       "@commitlint/config-conventional"
     ]
-  },
-  "dependencies": {
-    "chalk": "^5.0.1",
-    "dayjs": "^1.11.3",
-    "execa": "^6.1.0",
-    "inquirer": "^9.0.0",
-    "jsonfile": "^6.1.0",
-    "ora": "^6.1.2",
-    "prettier": "^2.7.1",
-    "shelljs": "^0.8.5",
-    "strip-json-comments": "^4.0.0",
-    "ztshared": "^0.0.12"
   }
 }

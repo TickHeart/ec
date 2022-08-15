@@ -17,19 +17,20 @@ export async function degitTs() {
         name: 'type',
         choices: ['是', '否'],
         message: `是否要强制创建？这样会覆盖 ${chalk.red(
-          fileName
-        )} 文件夹下原有的文件`
-      }
+          fileName,
+        )} 文件夹下原有的文件`,
+      },
     ])
     const spinner = ora('开始加载')
     spinner.start()
     await execaCommand(type === '是' ? shellForce : shell, {
       stdio: 'inherit',
       encoding: 'utf-8',
-      cwd
+      cwd,
     })
     spinner.succeed('加载成功')
-  } catch {
+  }
+  catch {
     log(`${chalk.red('安装是失败，请检测degit环境!')}\n`)
   }
 
