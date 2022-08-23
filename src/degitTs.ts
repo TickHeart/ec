@@ -9,7 +9,7 @@ export async function degitTs() {
   const cwd = process.cwd()
   const fileName = cwd.split('/').pop()
   const shellForce = 'degit TickHeart/starter-ts  --force'
-  const shell = 'degit TickHeart/starter-ts demo'
+  const shell = 'degit TickHeart/starter-ts'
   try {
     const { type } = await inquirer.prompt([
       {
